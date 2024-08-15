@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="my-4">Welcome, {{ user['name'] }}!</h1>
+            <p>Here is your dashboard where you can manage your profile and more.</p>
+
+            <!-- Display user information -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">User Information</h5>
+                    <p class="card-text"><strong>Name:</strong> {{ user['name'] }}</p>
+                    <p class="card-text"><strong>Email:</strong> {{ user['email'] }}</p>
+                </div>
+            </div>
+
+            <!-- Add links to other functionalities -->
+            <div class="mt-4">
+                <a href="{{ url_for('create_user') }}" class="btn btn-primary"><i class="bi bi-person-plus"></i> Create New User</a>
+                <a href="{{ url_for('index') }}" class="btn btn-secondary"><i class="bi bi-person-gear"></i> Manage Users</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
